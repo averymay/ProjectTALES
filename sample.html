@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flashcards</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.w3-btn {margin-bottom:10px;}
+<img src="https://res.cloudinary.com/mhmd/image/upload/v1564991372/image_pxlho1.svg" alt="" width="150" class="mb-4">
+</style>
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="../creative/main.css">
+</head>
+<body>
+    <!--<base href="../creative/assets/img/bg-masthead.jpg">
+     START of javascript code -->
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imageResult')
+                        .attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(function () {
+            $('#upload').on('change', function () {
+                readURL(input);
+            });
+        });
+
+        /*  ==========================================
+            SHOW UPLOADED IMAGE NAME
+        * ========================================== */
+        var input = document.getElementById( 'upload' );
+        var infoArea = document.getElementById( 'upload-label' );
+
+        input.addEventListener( 'change', showFileName );
+            function showFileName( event ) {
+            var input = event.srcElement;
+            var fileName = input.files[0].name;
+            infoArea.textContent = 'File name: ' + fileName;
+        }
+    </script>
+    <!-- END of javascript code -->
+<br><h2 align="center">Create Your Tactile Flashcard</h2>
+                
+    <!-- START of container -->
+    <div class="flashcards">
+        <div class="row">
+            <!-- START of left side of the container -->
+            <div class="col-md-9 flashcards-left">
+                <div class="input-group mb-3 px-2 py-2 rounded-pill shadow-sm" style="width: 75%; background-color: lightblue;">
+                    <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                    <input  id="upload" type="file" onchange="readURL(this);" class="form-control border-0" style="background-color: lightblue;">
+                    <div class="input-group-append">
+                        <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="material-icons">&#xe864; &#160</i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                    </div>
+                </div>
+
+                <p class="font-italic" style="margin-right: 25%;">The image uploaded will be rendered below.</p>
+                <div class="image-area mt-4" style="margin-right: 25%;"></div>
+            </div>
+            <!-- END of left side of the container -->
+
+            <!-- START of the right side of the container -->
+            <div class="col-md-3 flashcards-right">
+                <!-- START of form -->
+                <div class="form-group">
+                    <label>Tactile Category:</label>
+                    <select class="form-control">
+                        <option class="hidden"  selected disabled>Choose Tactile Category</option>
+                        <option>Plant Tactile Card</option>
+                        <option>Animal Tactile Card</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Braille Language:</label>
+                    <select class="form-control">
+                        <option class="hidden"  selected disabled>Choose Braille Language</option>
+                        <option>English</option>
+                        <option>Tagalog</option>
+                        <option>Cebuano</option>
+                    </select>
+                </div>
+                <div class="form-check" style="margin-left:25%">
+                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                    <label class="form-check-label" for="dropdownCheck">View 3D image</label>
+                </div>
+                <div class="w3-container">
+                    <br>
+                          <button class="w3-btn w3-white w3-border w3-border-green w3-round-large"><font color="green"> &#160 &#160 &#160 &#160 &#160 &#160 CREATE  &#160 &#160 &#160 &#160 &#160  &#160 &#160</font></button>
+                </div>
+                <div class="w3-container">
+                          <button class="w3-btn w3-blue w3-border w3-border-blue w3-round-large"><font color="white">DOWNLOAD FLASHCARD</font></button>
+                </div>
+                
+                <!-- END of form -->
+
+                <!-- START buttons -->
+                <!-- END buttons -->
+            </div>
+            <!-- END of the right side of the container -->
+        </div>
+    </div>
+    <!-- END container -->
+</body>
+</html>
